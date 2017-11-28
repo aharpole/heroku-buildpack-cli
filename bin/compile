@@ -33,4 +33,9 @@ mkdir -p $BUILD_DIR/.profile.d
 cp "$BUILDPACK_DIR/bin/heroku-cli.sh" $BUILD_DIR/.profile.d/
 chmod +x $BUILD_DIR/.profile.d/heroku-cli.sh
 
-puts_step "Heroku CLI installation done"
+puts_step "Heroku CLI installation done, installing repo plugin"
+
+./heroku plugins:install heroku-repo
+./heroku repo:purge_cache
+
+puts_step "Heroku repo plugin installed, cache purged"
