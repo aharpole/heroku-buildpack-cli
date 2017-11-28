@@ -35,9 +35,7 @@ chmod +x $BUILD_DIR/.profile.d/heroku-cli.sh
 
 puts_step "Heroku CLI installation done, installing repo plugin"
 
-echo $(ls)
-
-./heroku plugins:install heroku-repo
-./heroku repo:purge_cache
+./bin/heroku plugins:install heroku-repo
+./bin/heroku repo:purge_cache
 
 puts_step "Heroku repo plugin installed, cache purged"
